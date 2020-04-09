@@ -31,7 +31,7 @@ $event = $receive['events'][0];
 switch($event['type']) {
     case "message":
       $rep = array(
-        "type" => "message",
+        "type" => "text",
         "text" => $event["message"]["text"]
       );
     break;
