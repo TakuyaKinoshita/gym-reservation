@@ -1,0 +1,1674 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+<HEAD lang="ja">
+  <title>
+    時間帯別空き状況
+  </title>
+  <meta content="Microsoft Visual Studio 7.0" name="GENERATOR" />
+  <meta content="C#" name="CODE_LANGUAGE" />
+  <meta content="JavaScript" name="vs_defaultClientScript" />
+  <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
+  <link href="App_Themes/Basic/StyleSheet.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="//yoyaku.city.saga.lg.jp/web/eGRStyle.css" />
+  <link rel="stylesheet" type="text/css" href="//yoyaku.city.saga.lg.jp/web/RoundedStyle.css" />
+</HEAD>
+
+<body onload="InitFocusLinkButton()">
+  <form name="Form1" method="post" action="Wg_JikantaibetsuAkiJoukyou.aspx" id="Form1" lang="ja">
+    <input type="hidden" name="h_Name_dlRepeat_ctl00_tpItem_lblShitsujouSetsumei"
+      id="h_Name_dlRepeat_ctl00_tpItem_lblShitsujouSetsumei" value="←面割の詳細はクリック" />
+    <input type="hidden" name="h_Count_dlRepeat_ctl00_tpItem_lblShitsujouSetsumei"
+      id="h_Count_dlRepeat_ctl00_tpItem_lblShitsujouSetsumei" value="8" />
+    <input type="hidden" name="h_StringSelect" id="h_StringSelect" value="選択" />
+    <input type="hidden" name="h_StringTyuusen" id="h_StringTyuusen" value="抽選" />
+    <input type="hidden" name="h_StringTeiki" id="h_StringTeiki" value="定期" />
+    <input type="hidden" name="h_ImageButtonFlg" id="h_ImageButtonFlg" value="true" />
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+      value="/wEPDwULLTExMTI2OTI5MzFkZHfIa43Akm5v5WFkkrJ3P5NuRBRx" />
+
+    <script language="JavaScript" src="OecButton.js"></script>
+    <script language="JavaScript" src="OecBody.js"></script>
+    <script language="JavaScript" src="OecLinkButton.js"></script>
+    <script language="javascript">
+< !--
+        function lbF(linkButton) {
+          linkButton.style.backgroundColor = 'DarkOrange';
+        }
+      function lbB(linkButton) {
+        linkButton.style.backgroundColor = '';
+      }
+      function SetDefaultLinkColor(linkButton) {
+        linkButton.style.color = '#0000ff';
+      }
+      function SetVisitedLinkColor(linkButton) {
+        linkButton.style.color = '#ff0000';
+      }
+// -->
+    </script>
+    <script language="JavaScript" src="OecRadioButton.js"></script>
+    <script language="JavaScript">var dialog_flg = 0;</script>
+    <script language="JavaScript" src="OecBody.js"></script>
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="75164D1B" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl04_b0" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl04_b0"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl04_b1" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl04_b1"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl05_b0" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl05_b0"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl05_b1" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl05_b1"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl06_b0" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl06_b0"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl06_b1" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl06_b1"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl07_b0" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl07_b0"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl07_b1" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl07_b1"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl08_b0" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl08_b0"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl08_b1" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl08_b1"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl09_b10" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl09_b10"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl09_b11" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl09_b11"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b2" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b2"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b3" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b3"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b6" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b6"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b7" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b7"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b10" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b10"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b11" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl10_b11"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl11_b2" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl11_b2"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl11_b3" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl11_b3"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl12_b0" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl12_b0"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl12_b1" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl12_b1"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl12_b2" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl12_b2"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_dgTable_ctl12_b3" id="h_dlRepeat_ctl00_tpItem_dgTable_ctl12_b3"
+      value="&amp;nbsp;&amp;nbsp;○&amp;nbsp;&amp;nbsp;" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_lnkBackCenter" id="h_dlRepeat_ctl00_tpItem_lnkBackCenter"
+      value="&lt;&lt; 戻る" />
+    <input type="hidden" name="h_dlRepeat_ctl00_tpItem_lnkNextCenter" id="h_dlRepeat_ctl00_tpItem_lnkNextCenter"
+      value="次へ &gt;&gt;" />
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+      value="/wEWJgKR3siWDQK+ya+NDAL9ofEWAvfWqo8IAuKEzmUCmIvl9AICluHWlQYCpveQ1QUC58CCnwUC58CGnwUCzNfkiQsCzNfoiQsCse7GdAKx7sp0ApaFqd8GApaFrd8GAquv6J0PAquv7J0PAv7F3MkGApmv+l4C0+X99A0C0+X59A0C0+Xt9A0C0+Xp9A0C4aPc8AQCxrq+2woCuPzf3wMCuPzb3wMCnZO6ygkCnZO2ygkCnZPCygkCnZO+ygkCibvJ8A0CyeW3eAL7gO/sAQKg04AOAvL0/JgBAvDTtfwFX0oEK7FaBeieXMsZR7MLorc7SVg=" />
+    <table style="width: 100%; border-width: 0;">
+      <tr>
+        <td>
+
+          <div class="HeaderMainDiv">
+            <table id="ucPCHeader_TableHeader" cellspacing="1" cellpadding="1" border="0" width="100%">
+              <tr class="HeaderMain">
+                <TD nowrap="nowrap">
+                  <span id="ucPCHeader_lblTitle1"><b>
+                      <font size="6">佐賀市</font>
+                    </b></span>
+
+                  <span id="ucPCHeader_lblTitle2"><b>
+                      <font size="4">公共施設予約システム</font>
+                    </b></span>
+
+                  <span id="ucPCHeader_lblTitle3"><b>
+                      <font size="6">空き照会・予約の申込 時間帯別空き状況</font>
+                    </b></span></TD>
+              </tr>
+              <tr>
+                <TD nowrap="nowrap" class="HeaderSub"></TD>
+              </tr>
+            </table>
+
+          </div>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table id="TableBody" cellspacing="2" cellpadding="2" width="100%" border="0" style="WIDTH:100%;">
+            <tr>
+              <TD id="TdSideMenu" valign="top" class="tdSideMenuNormal">
+                <table id="ucPCSideMenuBody_DataListBody" cellspacing="0" cellpadding="1" border="0" width="210">
+                  <tr>
+                    <td align="right" valign="middle">
+                      <font color="White">
+
+                        <TABLE id="Table2" cellSpacing="0" cellPadding="3" width="100%" border="0">
+                          <tr>
+                            <td valign="middle">
+
+                            </td>
+                          </tr>
+                          <TR>
+                            <TD vAlign="middle">
+                              <label for="ucPCSideMenuBody_DataListBody_ctl00_btnMessageTsuuchi"><span
+                                  id="s_ucPCSideMenuBody_DataListBody_ctl00_btnMessageTsuuchi" class="btn10_Blue"
+                                  style="width:100%;cursor:hand;"><input type="submit"
+                                    name="ucPCSideMenuBody$DataListBody$ctl00$btnMessageTsuuchi" value="メッセージ（通知）"
+                                    id="ucPCSideMenuBody_DataListBody_ctl00_btnMessageTsuuchi" tabindex="-1"
+                                    FocusedBorderStyle="" FocusedBorderColor="" BorderStyle="" BorderColor="" PB="True"
+                                    onclick="NoOnBeforeUnload();return Button_OnClick(this);"
+                                    onfocus="Button_OnFocus(this)" onblur="Button_OnBlur(this)"
+                                    onMouseOver="Button_OnMouseOver(this)" onMouseOut="Button_OnMouseOut(this)"
+                                    hidefocus="true" border="0" /></span></label></TD>
+                          </TR>
+                          <TR>
+                            <TD vAlign="middle">
+                              <P>
+                              </P>
+                            </TD>
+                          </TR>
+                        </TABLE>
+                        <table id="ucPCSideMenuBody_DataListBody_ctl00_tblShori" cellspacing="0" cellpadding="0"
+                          width="100%" border="0">
+                          <tr>
+                            <td width="5%"></td>
+                            <TD valign="middle" width="40%">
+                              <span id="ucPCSideMenuBody_DataListBody_ctl00_lblSyoriGuide" align="Center"
+                                style="display:inline-block;"><b>
+                                  <font size="3">処理ガイド</font>
+                                </b></span></TD>
+                            <TD valign="middle" width="35%">
+                              <label for="ucPCSideMenuBody_DataListBody_ctl00_btnDisableSideMenu"><span
+                                  id="s_ucPCSideMenuBody_DataListBody_ctl00_btnDisableSideMenu" class="btn10_Blue"
+                                  style="width:100%;cursor:hand;"><input type="submit"
+                                    name="ucPCSideMenuBody$DataListBody$ctl00$btnDisableSideMenu" value="非表示"
+                                    id="ucPCSideMenuBody_DataListBody_ctl00_btnDisableSideMenu" tabindex="-1"
+                                    FocusedBorderStyle="" FocusedBorderColor="" BorderStyle="" BorderColor="" PB="True"
+                                    onclick="NoOnBeforeUnload();return Button_OnClick(this);"
+                                    onfocus="Button_OnFocus(this)" onblur="Button_OnBlur(this)"
+                                    onMouseOver="Button_OnMouseOver(this)" onMouseOut="Button_OnMouseOut(this)"
+                                    hidefocus="true" border="0" /></span></label>
+                            </TD>
+                            <td width="20%"></td>
+                          </tr>
+                        </table>
+
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                          <table id="ucPCSideMenuBody_DataListBody_ctl02_ucPCSideMenuItem_dataListItem" cellspacing="0"
+                            cellpadding="1" bordercolor="#CCCCCC" border="0" height="100%" width="100%">
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="White"><b>
+                                    <a onclick="return Double_ClickCheck();"
+                                      id="ucPCSideMenuBody_DataListBody_ctl02_ucPCSideMenuItem_dataListItem_ctl00_lnkBtnGoPage"
+                                      tabIndex="-1"
+                                      href="javascript:__doPostBack('ucPCSideMenuBody$DataListBody$ctl02$ucPCSideMenuItem$dataListItem$ctl00$lnkBtnGoPage','')"
+                                      style="display:inline-block;"><b>
+                                        <font color="Blue" size="3">▼施設検索</font>
+                                      </b></a>
+
+                                  </b></font>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="#000066">
+                                  <span
+                                    id="ucPCSideMenuBody_DataListBody_ctl02_ucPCSideMenuItem_dataListItem_ctl01_lblItem"
+                                    style="display:inline-block;"><b>
+                                      <font size="3">－佐賀市立体育館</font>
+                                    </b></span>
+                                </font>
+                              </td>
+                            </tr>
+                          </table>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                          <table id="ucPCSideMenuBody_DataListBody_ctl03_ucPCSideMenuItem_dataListItem" cellspacing="0"
+                            cellpadding="1" bordercolor="#CCCCCC" border="0" height="100%" width="100%">
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="White"><b>
+                                    <a onclick="return Double_ClickCheck();"
+                                      id="ucPCSideMenuBody_DataListBody_ctl03_ucPCSideMenuItem_dataListItem_ctl00_lnkBtnGoPage"
+                                      tabIndex="-1"
+                                      href="javascript:__doPostBack('ucPCSideMenuBody$DataListBody$ctl03$ucPCSideMenuItem$dataListItem$ctl00$lnkBtnGoPage','')"
+                                      style="display:inline-block;"><b>
+                                        <font color="Blue" size="3">▼日時選択</font>
+                                      </b></a>
+
+                                  </b></font>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="#000066">
+                                  <span
+                                    id="ucPCSideMenuBody_DataListBody_ctl03_ucPCSideMenuItem_dataListItem_ctl01_lblItem"
+                                    style="display:inline-block;"><b>
+                                      <font size="3">－2020年4月14日</font>
+                                    </b></span>
+                                </font>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="#000066">
+                                  <span
+                                    id="ucPCSideMenuBody_DataListBody_ctl03_ucPCSideMenuItem_dataListItem_ctl02_lblItem"
+                                    style="display:inline-block;"><b>
+                                      <font size="3">－表示期間：1日</font>
+                                    </b></span>
+                                </font>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="#000066">
+                                  <span
+                                    id="ucPCSideMenuBody_DataListBody_ctl03_ucPCSideMenuItem_dataListItem_ctl03_lblItem"
+                                    style="display:inline-block;"><b>
+                                      <font size="3">－時間帯：全日</font>
+                                    </b></span>
+                                </font>
+                              </td>
+                            </tr>
+                          </table>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                          <table id="ucPCSideMenuBody_DataListBody_ctl04_ucPCSideMenuItem_dataListItem" cellspacing="0"
+                            cellpadding="1" bordercolor="#CCCCCC" border="0" height="100%" width="100%">
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="White"><b>
+                                    <a onclick="return Double_ClickCheck();"
+                                      id="ucPCSideMenuBody_DataListBody_ctl04_ucPCSideMenuItem_dataListItem_ctl00_lnkBtnGoPage"
+                                      tabIndex="-1"
+                                      href="javascript:__doPostBack('ucPCSideMenuBody$DataListBody$ctl04$ucPCSideMenuItem$dataListItem$ctl00$lnkBtnGoPage','')"
+                                      style="display:inline-block;"><b>
+                                        <font color="Blue" size="3">▼施設別空き状況</font>
+                                      </b></a>
+
+                                  </b></font>
+                              </td>
+                            </tr>
+                          </table>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                          <table id="ucPCSideMenuBody_DataListBody_ctl05_ucPCSideMenuItem_dataListItem" cellspacing="0"
+                            cellpadding="1" bordercolor="#CCCCCC" border="0" height="100%" width="100%">
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="White"><b>
+
+                                    <span
+                                      id="ucPCSideMenuBody_DataListBody_ctl05_ucPCSideMenuItem_dataListItem_ctl00_lnkLblGoPage"
+                                      style="display:inline-block;">
+                                      <font size="3">▼時間帯別空き状況</font>
+                                    </span>
+                                  </b></font>
+                              </td>
+                            </tr>
+                          </table>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                          <table id="ucPCSideMenuBody_DataListBody_ctl08_ucPCSideMenuItem_dataListItem" cellspacing="0"
+                            cellpadding="1" bordercolor="#CCCCCC" border="0" height="100%" width="100%">
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="White"><b>
+
+                                    <span
+                                      id="ucPCSideMenuBody_DataListBody_ctl08_ucPCSideMenuItem_dataListItem_ctl00_lnkLblGoPage"
+                                      style="display:inline-block;">
+                                      <font color="Black" size="3">▼詳細申請</font>
+                                    </span>
+                                  </b></font>
+                              </td>
+                            </tr>
+                          </table>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                          <table id="ucPCSideMenuBody_DataListBody_ctl09_ucPCSideMenuItem_dataListItem" cellspacing="0"
+                            cellpadding="1" bordercolor="#CCCCCC" border="0" height="100%" width="100%">
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="White"><b>
+
+                                    <span
+                                      id="ucPCSideMenuBody_DataListBody_ctl09_ucPCSideMenuItem_dataListItem_ctl00_lnkLblGoPage"
+                                      style="display:inline-block;">
+                                      <font color="Black" size="3">▼申込確認</font>
+                                    </span>
+                                  </b></font>
+                              </td>
+                            </tr>
+                          </table>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <font color="Black">
+
+                        <P>
+                          <table id="ucPCSideMenuBody_DataListBody_ctl10_ucPCSideMenuItem_dataListItem" cellspacing="0"
+                            cellpadding="1" bordercolor="#CCCCCC" border="0" height="100%" width="100%">
+                            <tr>
+                              <td nowrap="nowrap">
+                                <font color="White"><b>
+
+                                    <span
+                                      id="ucPCSideMenuBody_DataListBody_ctl10_ucPCSideMenuItem_dataListItem_ctl00_lnkLblGoPage"
+                                      style="display:inline-block;">
+                                      <font color="Black" size="3">▼申込完了</font>
+                                    </span>
+                                  </b></font>
+                              </td>
+                            </tr>
+                          </table>
+                        </P>
+
+                      </font>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="bottom">
+                      <font color="Black">
+
+                        <span id="ucPCSideMenuBody_DataListBody_ctl11_lblSpace" align="Left"
+                          style="display:inline-block;"><b>
+                            <font color="Black" size="3">
+                              <BR>
+                              <BR>
+                              <BR>
+                            </font>
+                          </b></span>
+                        <span id="ucPCSideMenuBody_DataListBody_ctl11_lblFooter" align="Left"
+                          style="display:inline-block;"><b>
+                            <font color="Black" size="3">途中で、ブラウザの「戻る」は<br>使用しないでください。</font>
+                          </b></span>
+                      </font>
+                    </td>
+                  </tr>
+                </table>
+              </TD>
+              <TD nowrap="nowrap">
+                <table id="TableMain"
+                  style="BACKGROUND-POSITION:right bottom;BACKGROUND-ATTACHMENT:fixed;WIDTH:100%;BACKGROUND-REPEAT:no-repeat;HEIGHT:100%;"
+                  cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <TD style="HEIGHT: 100%" nowrap="nowrap">
+                      <DIV id="DivMain"
+                        style="BACKGROUND-POSITION:right bottom;BACKGROUND-ATTACHMENT:fixed;WIDTH:100%;BACKGROUND-REPEAT:no-repeat;">
+                        <TABLE id="Table2" cellSpacing="1" cellPadding="1" width="100%">
+                          <TR>
+                            <TD><span id="lblCap" style="display:inline-block;"><b>
+                                  <font size="4">
+                                    複数の時間帯の申込ができます。申込をしたいところを選んで<br>「次へ」のボタンを押してください。選択すると「選択」の文字が表示されます。<br>空きの時間帯でも予約が完了するまでの間に他の利用者に予約される場合があります。<br>
+                                    　　　　（○：空きあり　△：用途によっては使用可能　×：空きなし　－：申込対象外）</font>
+                                </b></span></TD>
+                          </TR>
+                          <TR>
+                            <TD><span id="lblExpl"><b>
+                                  <font size="4">&nbsp;</font>
+                                </b></span></TD>
+                          </TR>
+                        </TABLE>
+                        <TABLE id="Table1" cellSpacing="1" cellPadding="1" width="100%" border="0">
+                          <TR>
+                            <TD noWrap align="center">
+                              <table id="dlRepeat" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                  <td>
+
+                                    <FONT face="MS UI Gothic">
+                                      <TABLE id="Table1" cellSpacing="1" cellPadding="1" width="100%" border="0">
+                                        <TR>
+                                          <TD style="HEIGHT: 31px" bgColor="#e6e6fa">
+                                            <table id="dlRepeat_ctl00_tpItem_Table2" style="HEIGHT: 28px"
+                                              cellspacing="1" cellpadding="1" width="100%" align="right" border="1">
+                                              <tr>
+                                                <TD nowrap="nowrap" width="90%"><a
+                                                    onclick="javascript:window.open(&quot;https://www.city.saga.lg.jp/main/18565.html&quot;,&quot;&quot;,&quot;toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes&quot;);return false;"
+                                                    id="dlRepeat_ctl00_tpItem_lnkShisetsu" tabindex="1"
+                                                    href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$lnkShisetsu','')"
+                                                    onfocus="lbF(this)" onblur="lbB(this)"><b>
+                                                      <font size="4">佐賀市立体育館</font>
+                                                    </b></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  <a onclick="javascript:window.open(&quot;http://yoyaku.city.saga.lg.jp/shisetsu/SSTH24/09/09.htm&quot;,&quot;&quot;,&quot;toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes&quot;);return false;"
+                                                    id="dlRepeat_ctl00_tpItem_lnkShitsujou" tabindex="1"
+                                                    href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$lnkShitsujou','')"
+                                                    onfocus="lbF(this)" onblur="lbB(this)"><b>
+                                                      <font size="4">競技場</font>
+                                                    </b></a><span id="dlRepeat_ctl00_tpItem_lblShitsujouSetsumei"
+                                                    title="←面割の詳細はクリック" onclick="ChangeLabelText(this)"
+                                                    style="cursor:pointer;"><b>
+                                                      <font size="4">←面割の詳細は…</font>
+                                                    </b></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  <span id="dlRepeat_ctl00_tpItem_lblGuideExpl"><b>
+                                                      <font color="Blue" size="3">下線のある施設は案内画面があります。</font>
+                                                    </b></span>
+                                                </TD>
+                                              </tr>
+                                            </table>
+
+
+                                          </TD>
+                                        </TR>
+                                        <TR>
+                                          <TD noWrap align="center" colSpan="4">
+                                            <table cellspacing="0" rules="all" border="1"
+                                              id="dlRepeat_ctl00_tpItem_dgTable" width="100%">
+                                              <tr class="TitleColor" align="center" valign="middle">
+                                                <td width="40%" nowrap="nowrap">
+                                                  <font size="4"><b>2020年4月14日<br>（火）</b></font>
+                                                </td>
+                                                <td width="10%" nowrap="nowrap">
+                                                  <font size="4"><b>定員</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>9:00～<br>10:00</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>10:00～<br>11:00</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>11:00～<br>12:00</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>12:00～<br>13:00</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>13:00～<br>14:00</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>14:00～<br>15:00</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>15:00～<br>16:00</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>16:00～<br>17:00</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>17:30～<br>18:30</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>18:30～<br>19:30</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>19:30～<br>20:30</b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>20:30～<br>21:30</b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="White">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_lblMen"><b>
+                                                          <font size="4">全面</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l0">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l1">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l2">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l3">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l10">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl02_l11">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="Lavender">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_lblMen"><b>
+                                                          <font size="4">半面（西）</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l0">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l1">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l2">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l3">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l10">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl03_l11">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="White">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_lblMen"><b>
+                                                          <font size="4">半面（東）</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl04_b0"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl04$b0','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl04_b1"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl04$b1','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l2">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l3">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l8">
+                                                        <font size="4">個人使用</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l9">
+                                                        <font size="4">個人使用</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l10">
+                                                        <font size="4">個人使用</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl04_l11">
+                                                        <font size="4">個人使用</font>
+                                                      </span></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="Lavender">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_lblMen"><b>
+                                                          <font size="4">１／８面Ａ</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl05_b0"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl05$b0','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl05_b1"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl05$b1','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l2">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l3">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l10">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl05_l11">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="White">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_lblMen"><b>
+                                                          <font size="4">１／８面Ｂ</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl06_b0"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl06$b0','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl06_b1"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl06$b1','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l2">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l3">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l10">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl06_l11">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="Lavender">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_lblMen"><b>
+                                                          <font size="4">１／８面Ｃ</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl07_b0"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl07$b0','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl07_b1"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl07$b1','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l2">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l3">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l10">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl07_l11">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="White">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_lblMen"><b>
+                                                          <font size="4">１／８面Ｄ</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl08_b0"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl08$b0','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl08_b1"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl08$b1','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l2">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l3">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l10">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl08_l11">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="Lavender">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_lblMen"><b>
+                                                          <font size="4">１／８面Ｅ</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l0">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l1">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l2">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l3">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl09_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl09_b10"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl09$b10','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl09_b11"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl09$b11','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="White">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl10_lblMen"><b>
+                                                          <font size="4">１／８面Ｆ</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl10_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl10_l0">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl10_l1">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl10_b2"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl10$b2','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl10_b3"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl10$b3','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl10_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl10_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl10_b6"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl10$b6','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl10_b7"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl10$b7','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl10_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl10_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl10_b10"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl10$b10','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl10_b11"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl10$b11','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="Lavender">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_lblMen"><b>
+                                                          <font size="4">１／８面Ｇ</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l0">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l1">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl11_b2"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl11$b2','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl11_b3"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl11$b3','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l10">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl11_l11">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                              </tr>
+                                              <tr align="center" valign="middle" bgcolor="White">
+                                                <td align="left" nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_lblMen"><b>
+                                                          <font size="4">１／８面Ｈ</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b>
+                                                      <span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_lblTeiin"
+                                                        align="Center" style="display:inline-block;"><b>
+                                                          <font size="4">－</font>
+                                                        </b></span>
+                                                    </b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl12_b0"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl12$b0','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl12_b1"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl12$b1','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl12_b2"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl12$b2','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><a id="dlRepeat_ctl00_tpItem_dgTable_ctl12_b3"
+                                                        tabindex="1"
+                                                        href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$dgTable$ctl12$b3','')"
+                                                        PB="False" onclick="return DCC(this)" onfocus="lbF(this)"
+                                                        onblur="lbB(this)"><b>
+                                                          <font size="4">&nbsp;&nbsp;○&nbsp;&nbsp;</font>
+                                                        </b></a></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_l4">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_l5">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_l6">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_l7">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_l8">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_l9">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_l10">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                                <td nowrap="nowrap">
+                                                  <font size="4"><b><span id="dlRepeat_ctl00_tpItem_dgTable_ctl12_l11">
+                                                        <font size="4">&nbsp;&nbsp;×&nbsp;&nbsp;</font>
+                                                      </span></b></font>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                            <TABLE id="TableFoot" cellSpacing="1" cellPadding="1" width="100%"
+                                              border="0">
+                                              <TR>
+                                                <TD align="right">
+                                                </TD>
+                                                <TD>&nbsp;</TD>
+                                                <TD align="left">
+                                                </TD>
+                                                <TD>&nbsp;</TD>
+                                                <TD align="right">
+                                                  <a id="dlRepeat_ctl00_tpItem_lnkBackCenter" tabindex="1"
+                                                    href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$lnkBackCenter','')"
+                                                    PB="True" onclick="NoOnBeforeUnload();return DCC(this)"
+                                                    onfocus="lbF(this)" onblur="lbB(this)"><b>
+                                                      <font size="4">
+                                                        << 戻る</font>
+                                                    </b></a></TD>
+                                                <TD>&nbsp;</TD>
+                                                <TD align="left">
+                                                  <a id="dlRepeat_ctl00_tpItem_lnkNextCenter" tabindex="1"
+                                                    href="javascript:__doPostBack('dlRepeat$ctl00$tpItem$lnkNextCenter','')"
+                                                    PB="True" onclick="NoOnBeforeUnload();return DCC(this)"
+                                                    onfocus="lbF(this)" onblur="lbB(this)"><b>
+                                                      <font size="4">次へ >></font>
+                                                    </b></a></TD>
+                                                <TD>&nbsp;</TD>
+                                                <TD align="right">
+                                                </TD>
+                                                <TD>&nbsp;</TD>
+                                                <TD align="left">
+                                                </TD>
+                                              </TR>
+                                            </TABLE>
+                                          </TD>
+                                        </TR>
+                                      </TABLE>
+                                    </FONT>
+
+                                  </td>
+                                </tr>
+                              </table>
+                            </TD>
+                          </TR>
+                        </TABLE>
+                        &nbsp;
+                      </DIV>
+
+                    </TD>
+                  </tr>
+                  <tr>
+                    <TD style="WIDTH: 100%" nowrap="nowrap">
+                      <div class="FooterMain">
+                        <table id="ucPCFooter_TableFooter" cellspacing="1" cellpadding="1" border="0" align="center">
+                          <tr>
+                            <TD nowrap="nowrap" width="3%"></TD>
+                            <TD nowrap="nowrap">
+                              <div id="ucPCFooter_pnlUtilBtn">
+
+                                <label for="ucPCFooter_btnUtil"><span id="s_ucPCFooter_btnUtil" class="btn14_Blue"
+                                    style="width:100%;cursor:hand;"><input type="submit" name="ucPCFooter$btnUtil"
+                                      value="色・文字サイズ変更" id="ucPCFooter_btnUtil" tabindex="104" FocusedBorderStyle=""
+                                      FocusedBorderColor="" BorderStyle="" BorderColor="" PB="True"
+                                      onclick="NoOnBeforeUnload();return Button_OnClick(this);"
+                                      onfocus="Button_OnFocus(this)" onblur="Button_OnBlur(this)"
+                                      onMouseOver="Button_OnMouseOver(this)" onMouseOut="Button_OnMouseOut(this)"
+                                      hidefocus="true" border="0" /></span></label>
+
+                              </div>
+                            </TD>
+                            <TD nowrap="nowrap" width="1%"></TD>
+                            <TD nowrap="nowrap">
+                              <div id="ucPCFooter_pnlMenuBtn">
+
+                                <label for="ucPCFooter_btnToMenu"><span id="s_ucPCFooter_btnToMenu" class="btn14_Blue"
+                                    style="width:100%;cursor:hand;"><input type="submit" name="ucPCFooter$btnToMenu"
+                                      value="メニューへ" id="ucPCFooter_btnToMenu" tabindex="103" FocusedBorderStyle=""
+                                      FocusedBorderColor="" BorderStyle="" BorderColor="" PB="True"
+                                      onclick="NoOnBeforeUnload();return Button_OnClick(this);"
+                                      onfocus="Button_OnFocus(this)" onblur="Button_OnBlur(this)"
+                                      onMouseOver="Button_OnMouseOver(this)" onMouseOut="Button_OnMouseOut(this)"
+                                      hidefocus="true" border="0" /></span></label>
+
+                              </div>
+                            </TD>
+                            <TD nowrap="nowrap" width="1%"></TD>
+                            <TD nowrap="nowrap">
+
+                            </TD>
+                            <TD nowrap="nowrap" width="2%"></TD>
+                            <TD nowrap="nowrap">
+                              <div id="ucPCFooter_pnlBackBtn">
+
+                                <label for="ucPCFooter_btnBack"><span id="s_ucPCFooter_btnBack" class="btn14_Blue"
+                                    style="width:100%;cursor:hand;"><input type="submit" name="ucPCFooter$btnBack"
+                                      value="&lt;&lt; 戻る" id="ucPCFooter_btnBack" tabindex="101" FocusedBorderStyle=""
+                                      FocusedBorderColor="" BorderStyle="" BorderColor="" PB="True"
+                                      onclick="NoOnBeforeUnload();return Button_OnClick(this);"
+                                      onfocus="Button_OnFocus(this)" onblur="Button_OnBlur(this)"
+                                      onMouseOver="Button_OnMouseOver(this)" onMouseOut="Button_OnMouseOut(this)"
+                                      hidefocus="true" border="0" /></span></label>
+
+                              </div>
+                            </TD>
+                            <TD nowrap="nowrap" width="1%"></TD>
+                            <TD nowrap="nowrap">
+                              <div id="ucPCFooter_pnlNextBtn">
+
+                                <label for="ucPCFooter_btnForward"><span id="s_ucPCFooter_btnForward" class="btn14_Blue"
+                                    style="width:100%;cursor:hand;"><input type="submit" name="ucPCFooter$btnForward"
+                                      value="次へ >>" id="ucPCFooter_btnForward" tabindex="100" FocusedBorderStyle=""
+                                      FocusedBorderColor="" BorderStyle="" BorderColor="" PB="True"
+                                      onclick="NoOnBeforeUnload();if (click_flg == 0){SetDisabled(this);__doPostBack('ucPCFooter$btnForward','');}return Button_OnClick(this);"
+                                      onfocus="Button_OnFocus(this)" onblur="Button_OnBlur(this)"
+                                      onMouseOver="Button_OnMouseOver(this)" onMouseOut="Button_OnMouseOut(this)"
+                                      hidefocus="true" border="0" /></span></label>
+
+                              </div>
+                            </TD>
+                            <TD nowrap="nowrap" width="100%"></TD>
+                          </tr>
+                        </table>
+
+                      </div>
+                    </TD>
+                  </tr>
+                </table>
+
+              </TD>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+    </table>
+
+
+    <SCRIPT language="javascript">< !--
+        document.bgColor="#ffffff"
+//--></SCRIPT>
+  </form>
+</body>
+
+</HTML>

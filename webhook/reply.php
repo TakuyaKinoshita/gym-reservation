@@ -1,5 +1,4 @@
 <?php
-echo "hello";
 /**
  * Copyright 2016 LINE Corporation
  *
@@ -15,6 +14,7 @@ echo "hello";
  * License for the specific language governing permissions and limitations
  * under the License.
  */
+require_once('../vender/autoload.php');
 
 $channelAccessToken = '7nMoNRFhixHQsgkTJ9gR10rii/W61T+Y9oiLuPHARiQjtQCWFsUnq/bZWLHfgA01dcl0MJ307iP9soUXKQ5ApZdgI0uCjHxfAElpmQ/hnRGzx7L6wPaIEPoUagCilBZtIhkgViMCN1H5i3UTobfK5QdB04t89/1O/w1cDnyilFU=';
 $replyAPI = 'https://api.line.me/v2/bot/message/reply';
@@ -36,9 +36,10 @@ switch($event['type']) {
       );
     break;
     case "postback":
-        switch($event["postback"]["data"]) {
-        }
+        // switch($event["postback"]["data"]) {
+        // }
     break;
+}
 // 返信するメッセージをjsonに変換
 $reply_token  = $event['replyToken'];
 $body = json_encode(array(
@@ -65,26 +66,26 @@ curl_exec($curl);
 curl_close($curl);
 
 function GetGym() {
-  $body = json_encode(array(
-      'replyToken' => $reply_token,
-      'messages'   => array($rep)
-  ));
-  // 返信内容のタイプの決定
-  $headers = array(
-      'Content-Type: text/html',
-      'charset: utf-8',
-      // 'Authorization: Bearer ' . $channelAccessToken
-  );
-  $options = array(
-      CURLOPT_URL            => $gymAPI,
-      CURLOPT_CUSTOMREQUEST  => 'POST',
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_HTTPHEADER     => $headers,
-      CURLOPT_POSTFIELDS     => $body
-  );
+    $body = json_encode(array(
+        'replyToken' => $reply_token,
+        'messages'   => array($rep)
+    ));
+    // 返信内容のタイプの決定
+    $headers = array(
+        'Content-Type: text/html',
+        'charset: utf-8',
+    // 'Authorization: Bearer ' . $channelAccessToken
+    );
+    $options = array(
+        CURLOPT_URL            => $gymAPI,
+        CURLOPT_CUSTOMREQUEST  => 'POST',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER     => $headers,
+        CURLOPT_POSTFIELDS     => $body
+    );
 
-  $curl = curl_init();
-  curl_setopt_array($curl, $options);
-  curl_exec($curl);
-  curl_close($curl);
+    $curl = curl_init();
+    curl_setopt_array($curl, $options);
+    curl_exec($curl);
+    curl_close($curl);
 }
