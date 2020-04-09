@@ -1,5 +1,5 @@
 <?php
-
+echo "hello";
 /**
  * Copyright 2016 LINE Corporation
  *
